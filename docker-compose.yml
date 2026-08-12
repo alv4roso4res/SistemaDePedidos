@@ -1,0 +1,21 @@
+# Sobe a API em container. O banco e o Supabase (servico externo), por isso
+# nao ha container de PostgreSQL aqui.
+#
+# Antes de subir: copie .env.example para .env e preencha DB_URL, DB_USERNAME
+# e DB_PASSWORD. O .env nao e versionado.
+#
+#   docker compose up --build
+
+services:
+  api:
+    build: .
+    image: sistema-de-pedidos:latest
+    container_name: sistema-de-pedidos
+    # Credenciais injetadas em tempo de execucao, nunca gravadas na imagem
+    env_file:
+      - .env
+    environment:
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-prod}
+    ports:
+      - "${APP_PORT:-8080}:${PORT:-8080}"
+    restart: unless-stopped

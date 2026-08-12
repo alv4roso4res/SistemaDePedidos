@@ -1,0 +1,39 @@
+# Segredos: nunca devem entrar no contexto de build
+.env
+.env.*
+*.pem
+*.key
+
+# Artefatos de build (a imagem compila do zero)
+target/
+build/
+
+# Metadados de versionamento
+.git/
+.gitattributes
+.gitignore
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.settings/
+.classpath
+.project
+
+# Ferramentas de IA
+.claude/
+.claude.json
+.claude.json.backup
+.mcp.json
+CLAUDE.md
+CLAUDE.local.md
+
+# Docs e arquivos do proprio Docker
+README.md
+HELP.md
+Dockerfile
+.dockerignore
+docker-compose.yml

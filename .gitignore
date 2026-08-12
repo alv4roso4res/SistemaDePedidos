@@ -1,0 +1,49 @@
+HELP.md
+target/
+.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
+
+### Claude Code ###
+CLAUDE.md
+CLAUDE.local.md
+.claude
+.mcp.json
+
+### Agent Skills (instaladas via `npx skills add`, reproduzíveis) ###
+.agents/
+
+### Variáveis de ambiente / segredos ###
+.env
+.env.*
+!.env.example
+*.pem
+*.key
