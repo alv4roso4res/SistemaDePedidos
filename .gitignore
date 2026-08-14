@@ -37,6 +37,8 @@ CLAUDE.md
 CLAUDE.local.md
 .claude
 .mcp.json
+ROADMAP.md
+COMMIT.md
 
 ### Agent Skills (instaladas via `npx skills add`, reproduzíveis) ###
 .agents/

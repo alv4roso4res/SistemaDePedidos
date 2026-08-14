@@ -104,6 +104,8 @@ Erros são padronizados pelo `ResourceExceptionHandler` (`@ControllerAdvice`) e 
 
 ## ▶ Como Executar
 
+> 📖 Guia passo a passo (local, Docker, `dev` e `prod`, e solução de problemas): **[COMO-RODAR.md](COMO-RODAR.md)**. O resumo abaixo cobre o caminho mais curto.
+
 Em desenvolvimento não é preciso configurar nada: o perfil padrão é o `dev`, que usa H2 em memória.
 
 ```bash
@@ -125,6 +127,8 @@ Rodar os testes:
 ```bash
 .\mvnw.cmd test
 ```
+
+A suíte cobre o domínio (cálculo de total e status do pedido), os services com Mockito, a camada web com `@WebMvcTest` e a aplicação inteira sobre H2 com `@SpringBootTest`. Detalhes em [COMO-RODAR.md](COMO-RODAR.md#5-rodar-os-testes).
 
 ## 🧪 Perfis
 
@@ -197,12 +201,3 @@ Painel administrativo estático em `src/main/resources/static`, servido pelo pr�
 - `html/clientes.html` — listagem de clientes
 
 O script `js/app.js` consome a API via axios e decide o que carregar conforme a página aberta. O mapeamento dos campos ainda espera um formato diferente do que a API devolve hoje (`status`/`date`/`clientName` em vez de `orderStatus`/`moment`/`client`), então as tabelas ainda não são preenchidas corretamente.
-
-## 💭 Futuramente
-
-1. Frontend integrado à API
-2. CRUD completo para pedidos, produtos e categorias
-3. Camada de DTOs, validação de entrada e autenticação
-4. Testes automatizados de serviços e endpoints
-5. Migrations com Flyway, para substituir o `ddl-auto=update` em produção
-6. Deploy da imagem Docker

@@ -1,6 +1,7 @@
 package com.alvaropaiva.SistemaDePedidos.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,6 +29,10 @@ public class User implements Serializable {
     private String name;
     private String email;
     private String phone;
+
+    // WRITE_ONLY: a senha e aceita no corpo das requisicoes (POST /users), mas
+    // nunca sai nas respostas — nem aqui, nem no client aninhado dentro de Order.
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @JsonIgnore  // Evita serialização JSON infinita
